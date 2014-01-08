@@ -18,11 +18,11 @@
   <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
   <link rel="stylesheet" media="screen" href="extensions/pointer/deck.pointer.css">
   <link rel="stylesheet" media="screen" href="extensions/toc/deck.toc.css">
-  <link rel="stylesheet" href="../extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="themes/style/beamer.css">
-  <!--link rel="stylesheet" media="screen" href="themes/style/web-2.0.css"-->
+  <!--link rel="stylesheet" media="screen" href="themes/style/beamer.css"-->
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
   <!--link rel="stylesheet" media="screen" href="themes/style/neon.css"-->
   <!--link rel="stylesheet" media="screen" href="themes/style/swiss.css"-->
   <!--link rel="stylesheet" media="screen" href="themes/style/mnml.css"-->
@@ -56,12 +56,28 @@
           <h2>8th Jan 2014, Dublin</h2>
     </section>
 
-    <section class="slide">
-      
+    <section class="slide no-md">
+ 
+    <div> 
+      <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+        // codemirror demo party!
+        var greeter = function(name) {
+          return "Why hello there " + name;
+        }
+        console.log(greeter("Joe"));
+      </textarea>
+  
+    </div> 
     </section>
 
-    <section class="slide">
-     
+    <section class="slide no-md">
+    <div> 
+        <div id="code" name="code" class="code" mode="javascript" style="display: none;"> // codemirror demo party!
+          var obj = { text : "Hello all!"};
+          console.log("HI THERE");
+        </div>
+   
+    </div> 
     </section>
 
     <section class="slide">
@@ -150,7 +166,8 @@
 <script src="extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 <!-- Plugin code -->
 <script src="extensions/codemirror/deck.codemirror.js"></script>
-
+<!-- Codemirror syntax style -->
+<link rel="stylesheet" href="extensions/codemirror/themes/default.css">
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
