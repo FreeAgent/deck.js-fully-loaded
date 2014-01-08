@@ -57,6 +57,17 @@
 </section>
 
 <section class="slide no-md">
+    <h2></h2>
+    <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li><li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
     <h2>High-Level overview of AngularJS</h2>
     <ul>
     <li>JavaScrpt library, for building a rich web client</li>
@@ -65,6 +76,18 @@
     <li>...and other DOM-manipulation and events libraries.<li>
     </ul>
 </section>
+
+<section class="slide no-md">
+    <h2>Angular is an MVC Framework</h2>
+    <ul>
+    <li>MVC, all in the browser</li>
+    <li>Model: JavaScript data-structures</li>
+    <li>View: a section of a web-page</li>
+    <li>Controller: JavaScript code to handle that view<li>
+    <li><li>
+    </ul>
+</section>
+
 
 
 <section class="slide no-md">
@@ -103,6 +126,13 @@
 </section>
 
 
+<section class="slide no-md">
+    <h2>Single Greatest Tool for AngularJS Development</h2>
+    <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Angular Batarang</a></li>
+    <li>Add-on for Chrome Developer Tools</a></li>
+</section>
+
+
 
 <section class="slide no-md">
     <h2></h2>
@@ -136,6 +166,82 @@
       <li><a href="http://nathanleclaire.com/blog/2014/01/04/5-smooth-angularjs-application-tips/">http://nathanleclaire.com/blog/2014/01/04/5-smooth-angularjs-application-tips/</a></li>
     </ul>
 </section>
+
+
+<section class="slide no-md">
+<div> 
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+ <meta charset="utf-8">
+   <title>My HTML File</title>
+     <link rel="stylesheet" href="css/app.css">
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <script src="lib/angular/angular.js"></script>
+</head>
+  <body>
+    <p>Hello {{ "Python Ireland" }} !</p>
+</body>
+</html>
+  </textarea>
+</div> 
+</section>
+
+ 
+<section class="slide no-md">
+<div> 
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+  <ul>
+    <li ng-repeat="phone in phones">
+      {{phone.name}}
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+
+</body>
+</html>
+
+  </textarea>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+<div> 
+  <div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
+use strict';
+	  
+var phonecatApp = angular.module('phonecatApp', []);
+
+phonecatApp.controller('PhoneListCtrl', function($scope) {
+
+$scope.phones = [
+    {'name': 'Nexus S',
+       'snippet': 'Fast just got faster with Nexus S.'},
+         {'name': 'Motorola XOOM™ with Wi-Fi',
+            'snippet': 'The Next, Next Generation tablet.'},
+       {'name': 'MOTOROLA XOOM™',
+     'snippet': 'The Next, Next Generation tablet.'}
+  ];
+});
+  </div>
+   
+</div> 
+</section>
+
 
 
 <section class="slide no-md">
