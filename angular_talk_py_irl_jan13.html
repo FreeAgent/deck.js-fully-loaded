@@ -130,6 +130,7 @@
     <h2>Single Greatest Tool for AngularJS Development</h2>
     <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Angular Batarang</a></li>
     <li>Add-on for Chrome Developer Tools</a></li>
+    <li>With Batarang, you can see the Scope (explained later)</a></li>
 </section>
 
 
@@ -169,6 +170,16 @@
 
 
 <section class="slide no-md">
+    <h2>Angular Phonecat</h2>
+    <ul>
+	    <li> The official Angular tutorial app </li>
+      <li><a href="http://docs.angularjs.org/tutorial/"></a>http://docs.angularjs.org/tutorial/</li>
+    </ul>
+</section>
+
+
+
+<section class="slide no-md">
 <div> 
   <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
 <!doctype html>
@@ -186,6 +197,15 @@
 </html>
   </textarea>
 </div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>ng-app bootstraps your Angular app</h2>
+    <ul>
+	    <li> ng-app defines the area of the page where Angular is in control</li>
+      <li>(Without ng-app, you don't have an Angular app.)</li>
+    </ul>
 </section>
 
  
@@ -220,13 +240,25 @@
 
 
 <section class="slide no-md">
+    <h2>Scope is crucial to Angular</h2>
+    <ul>
+      <li> Scope is structured like the roots of a tree</li>
+      <li>ng-app defines RootScope</li>
+      <li>Your controller and view define a new scope on the page</li>
+      <li>Even ng-repeat creates its own scope inside this.</li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
 <div> 
   <div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
 use strict';
 	  
 var phonecatApp = angular.module('phonecatApp', []);
 
-phonecatApp.controller('PhoneListCtrl', function($scope) {
+phonecatApp.controller('PhoneListCtrl',
+  function($scope) {
 
 $scope.phones = [
     {'name': 'Nexus S',
@@ -243,9 +275,350 @@ $scope.phones = [
 </section>
 
 
+<section class="slide no-md">
+    <h2>Angular loves JSON</h2>
+    <ul>
+      <li> JSON: JavaScript object notation</li>
+      <li>Angular consumes JSON best as an array of objects</li>
+    </ul>
+</section>
+
 
 <section class="slide no-md">
- 
+<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+<body ng-controller="PhoneListCtrl">
+ <div class="container-fluid">
+  <div class="row-fluid">
+   <div class="span2"> <!--Sidebar content-->
+      Search: <input ng-model="query">
+   </div>
+   <div class="span10"> <!--Body content-->
+    <ul class="phones">
+      <li ng-repeat="phone in phones | filter:query">
+        {{phone.name}}
+      <p>{{phone.snippet}}</p>
+      </li>
+    </ul>
+    </div>
+    </div>
+  </div>
+</body>
+</textarea>
+   
+</section>
+
+
+<section class="slide no-md">
+    <h2>Filters</h2>
+    <ul>
+      <li>Handy, declarative feature</li>
+      <li>Several filters built-in</li>
+      <li>You can also write your own filters</li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+    <h2>Angular-grunt-coffeescript</h2>
+    <ul>
+      <li><a href="https://github.com/roytruelove/angular-grunt-coffeescript">https://github.com/roytruelove/angular-grunt-coffeescript</a></li>
+      <li>Excellent starting point for an Angular app</li>
+      <li>Well-structured: directory per feature</li>
+      <li>Demos use of directives, filters, services</li>
+      <li>Uses CoffeeScript!</li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+    <h2>Polyglot Angular</h2>
+      <li>I highly recommend you learn CoffeeScript</li>
+      <li>Well-suited to Angular</li>
+      <li>Only 4 years old</li>
+      <li>Already language #13 on Github for new repostory creation
+      (Source: Adam Bard, 30th Aug 2013.)</li>
+      <li><a href="http://www.hanselman.com/blog/JavaScriptIsAssemblyLanguageForTheWebSematicMarkupIsDeadCleanVsMachinecodedHTML.aspx"></a>JavaScript is Assembly Language for the Web...</li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+    <h2>What you need to know about CoffeeScript</h2>
+    <ul>
+      <li>Like Python, whitespace is significant</li>
+      <li>Whitespace defines blocks (for functions and objects)</li>
+      <li>The arrow -> is used to define a function  </li>
+      <li>Easy to pick up Coffee  </li>
+      <li><a href="http://coffeescript.org">coffeescript.org</a></li>
+    </ul>
+</section>
+
+<section class="slide no-md">
+<div>
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="true">
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+  </textarea>
+</div> 
+</section>
+  
+
+
+<section class="slide no-md">
+ <div> 
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+  </textarea>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>Convert CoffeeScript snippets to JavaScript</h2>
+    <ul>
+      <li>First install js2coffee:</li>
+      <li><code>npm install -g js2coffee</code></li>
+      <li>Then convert JavaScript:</li>
+      <li><code>js2coffee input.js > output.coffee </code></li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+    <h2>Let's talk about DI</h2>
+    <ul>
+    <li>DI: dependency injection</li>
+    <li>Familiar to the Java world: e.g. Spring, Guice</li>
+    <li>DI is also used in .NET</li>
+    <li>DI is essential in Angular apps</li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+    <h2>angular.module</h2>
+    <ul>
+    <li>The name of the app ('app')</li>
+    <li>And the modules it depends on</li>
+    </ul>
+<div> 
+	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+m = angular.module('app', mods)
+  </div>
+   
+</div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>The modules of the app</h2>
+<div> 
+	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+mods = [
+  'common.directives.glowGreenOnMouseoverDirective'
+  'common.directives.uiTooltipDirective'
+  'common.filters.toLowerFilter'
+  'common.services.dataSvc'
+  'common.services.envProvider'
+  'common.services.toastrWrapperSvc'
+
+  'detailsView.detailsViewCtrl'
+  'detailsView.personDetailsDirective'
+
+  'index.indexCtrl'
+
+  'searchView.mattizerFilter'
+  'searchView.searchViewCtrl'
+]
+  </div>
+   
+</div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>The routes (to the pages) of the app</h2>
+<div> 
+	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+routesConfigFn = ($routeProvider)->
+  $routeProvider.when('/search',
+    {templateUrl: 'searchView/searchView.html'})
+  $routeProvider.when('/details/:id',
+    {templateUrl: 'detailsView/detailsView.html'})
+
+  $routeProvider.otherwise({redirectTo: '/search'})
+</div>
+   
+</div> 
+</section>
+
+<section class="slide no-md">
+    <h2>How the routes are configured</h2>
+<div> 
+	<div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
+m = angular.module('app', mods)
+
+m.config ['$routeProvider', routesConfigFn]
+  </div>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+<h2>The run method</h2>
+<ul>
+	<li>The run method is like the main() in C or Python</li> 
+	<li>executed first, once the Angular app has bootstrapped</li> 
+	<li>Good place to put an initial request to the server, say;
+            or detect the user's login status (wth ngCookies)</li> 
+</ul>
+</section>
+
+
+<section class="slide no-md">
+<h2>The run method</h2>
+<div> 
+	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+m.run (['common.services.env', (env)->
+  # Allows the environment service to run whatever app run block it wants.
+  if env.appRun?
+    env.appRun()
+])
+  </div>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>The Power of Directives</h2>
+    <ul>
+    <li>Key selling-point of AngularJS</li>
+    <li>Angular comes with a great host of directives built-in</li>
+    <li>See: <a href="http://docs.angularjs.org/api">http://docs.angularjs.org/api</a></li>
+    <li>Using a directive is declarative programming</li>
+    <li>And you can build your own directives (advanced topic)</li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+<h2>A simple directive, built with jQuery</h2>
+<div> 
+	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+name = 'common.directives.glowGreenOnMouseoverDirective'
+
+angular.module(name,[]).directive('glowGreenOnMouseover', [
+ '$log'
+ ($log) ->
+   (scope, element, attrs) ->
+      element.bind 'mouseenter', () ->
+        $(element).addClass('greenGlow')
+
+        element.bind 'mouseleave', () ->
+          $(element).removeClass('greenGlow')
+])
+  </div>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+<h2>Using the directive in a view</h2>
+<div> 
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+
+<div class="span6">
+  <input type="text" ng-model="search" placeholder="Filter by name..."></input>
+  <ul>
+    <li glow-green-on-mouseover ng-click="loadDetails(person.id)" ng-repeat="person in people | filter:search">
+     {{person.firstName | mattizer }} {{person.lastName}}
+    </li>
+  </ul>
+</div>
+  </textarea>
+  
+</div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>Services for Code Organisation</h2>
+    <ul>
+      <li>AngularJS services are local (in the browser)<li>
+      <li>Modules for your code<li>
+      <li>Reduce code duplication<li>
+      <li>Without services, you'll repeat code in your controllers!<li>
+      <li>DRY: Don't Repeat Yourself<li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
+<h2>A service to retrieve the data for the app</h2>
+<div> 
+	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+### Example of a service shared across views.
+Wrapper around the data layer for the app. 
+###
+name = 'common.services.dataSvc'
+class DataSvc
+  constructor: (@$log, @$http, @env) ->
+
+  _get: (relPath)->
+    return @$http.get("#{@env.serverUrl}/#{relPath}")
+
+  getPeople: () ->
+    return @_get('people')
+
+  getPerson: (id) ->
+    return @_get("person/#{id}")
+
+angular.module(name, []).factory(name,
+['$log','$http', 'common.services.env',
+($log, $http, env) ->
+        new DataSvc($log, $http, env)
+])
+  </div>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+<h2>Using the service in a controller</h2>
+<div> 
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="true">
+name = 'searchView.searchViewCtrl'
+
+angular.module(name, []).controller(name, [
+  '$scope'
+  '$log'
+  '$location'
+  'common.services.dataSvc'
+  'common.services.toastrWrapperSvc'
+  ($scope, $log, $location, data, tstr) ->
+
+    data.getPeople().then (resp)->
+      $scope.people = resp.data
+  </textarea>
+  
+</div> 
+</section>
+
+
+
+
+
+
+<section class="slide no-md">
 <div> 
   <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
   // codemirror demo party!
@@ -368,6 +741,8 @@ $scope.phones = [
 <!-- Syntax highlighting Modes -->
 <!-- javascript -->
 <script src="extensions/codemirror/mode/javascript/javascript.js"></script>
+<!-- coffeescript -->
+<script src="extensions/codemirror/mode/coffeescript/coffeescript.js"></script>
 <!-- html mode (note html mode requires xml, css and javascript) -->
 <script src="extensions/codemirror/mode/xml/xml.js"></script>
 <script src="extensions/codemirror/mode/css/css.js"></script>
