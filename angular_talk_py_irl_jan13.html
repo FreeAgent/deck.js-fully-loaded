@@ -45,22 +45,23 @@
   <div class="deck-container pointer">
 
     <!-- Begin slides. Just make elements with a class of slide. -->
-<section class="slide no-md" id="title-slide">
+<section class="slide" id="title-slide">
     <h1>Essentially Angular</h1>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Essentially Angular</h2>
-    <h2>@kevin_noonan</h2>
+    <h2><a href="http://twitter.com/kevin_noonan">@kevin_noonan</a></h2>
     <h2>Python Ireland</h2>
     <h2>8th Jan 2014, Dublin</h2>
+    <small>Hit 'M' for overview of slides. Press 'M' again to exit.</small>
 </section>
 
 
-<section class="slide no-md">
-    <h2>Very simple AngularJS app</h2>
+<section class="slide">
+    <h2>Simple Angular app</h2>
 <div> 
-  <textarea id="code1" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+  <textarea id="code1" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
 <!doctype html>
 <html lang="en" ng-app>
 <head>
@@ -79,98 +80,119 @@
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>ng-app bootstraps your Angular app</h2>
     <ul>
-	    <li> ng-app defines the area of the page where Angular is in control</li>
-      <li>(Without ng-app, you don't have an Angular app.)</li>
+      <li>ng-app defines the part of the page Angular controls.</li>
+      <li>Without ng-app, you don't have an Angular app.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Origins of AngularJS</h2>
+    <ul>
+    <li>Created by Miško Hevery and Adam Abrons.</li>
+    <li>Initial release in 2009.</li>
+    <li>Abrons left the project.</li>
+    <li>Core developers in Google:<br/> Miško Hevery, Igor Minár and Vojta Jína.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
-    <h2>High-Level overview of AngularJS</h2>
+<section class="slide">
+    <h2>High-Level Overview of AngularJS</h2>
     <ul>
-    <li>JavaScript library, for building a rich web client</li>
-    <li>A framework not unlike Django, but in the browser</li>
+    <li>JavaScript library, for building a rich web client.</li>
+    <li>A framework not unlike Django, but in the browser.</li>
     <li>A level of abstraction above jQuery</li>
     <li>...and other DOM-manipulation and events libraries.</li>
     </ul>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Angular is an MVC Framework</h2>
     <ul>
-    <li>MVC, all in the browser</li>
-    <li>Model: JavaScript data-structures</li>
-    <li>View: a section of a web-page</li>
-    <li>Controller: JavaScript code to handle that view</li>
+    <li>MVC, all in the browser.</li>
+    <li>Model: JavaScript data-structures.</li>
+    <li>View: a section of a web-page.</li>
+    <li>Controller: JavaScript code to handle that view.</li>
     </ul>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
+    <h2>Jargon: data-binding</h2>
+    <ul>
+      <li>Input from the user may change the model.</li>
+      <li>Your JavaScript code may change the model.</li>
+      <li>Data-binding means: as the model changes, the view changes automatically.</li>
+    </ul>
+</section>
+
+<section class="slide">
     <h2>A Potted History of Native Web Development</h2>
-    <li>Brief (and woefully incomplete)</li>
+    <li>Brief (and woefully incomplete).</li>
     </ul>
 </section>
 
-<section class="slide no-md">
-    <h2>Web Development Approach 1</h2>
-    <li>HTML Templates with tags</li>
-    <li>Server inserts data (often from a database)</li>
+<section class="slide">
+    <h2>Web Development approach 1</h2>
+    <li>HTML templates with tags.</li>
+    <li>Server inserts data (often from a database).</li>
+    <li>Example: Django templates.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
-    <h2>Document Object Model ("DOM")</h2>
+<section class="slide">
+<h2>Document Object Model ("DOM")</h2>
+    <ul>
+    <li>The DOM is a data structure representing the web-page.</li>
+    <li>An abstract view of the web-page as a tree of objects.</li>
+    </ul>
     <img src="http://upload.wikimedia.org/wikipedia/commons/5/58/Dom_tree.png "></img>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Web Development approach 2</h2>
     <ul>
-    <li>DOM tree Events & Manipulation</li>
+    <li>DOM tree events and Manipulation.</li>
     </ul>
     <img src="http://upload.wikimedia.org/wikipedia/commons/6/6e/Shopware-Logo-jQuery.png"></img>
 </section>
 
-<section class="slide no-md">
-    <h2>Web Development Approach 3</h2>
+<section class="slide">
+    <h2>Web Development approach 3</h2>
     <li>Rich client in the browser</li>
-    <li>built with Ember or Angular, etc.</li>
-    <li>consuming a REST API on the server</li>
+    <small>...built with Ember or Angular</small><br/>
+    <small>...consuming a REST API on the server.</small>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Single Greatest Tool for AngularJS Development</h2>
-    <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Angular Batarang</a></li>
-    <li>Add-on for Chrome Developer Tools</a></li>
-    <li>With Batarang, you can see the Scope (explained later)</a></li>
+    <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">AngularJS Batarang</a></li>
+    <li>Add-on for <a href="https://developers.google.com/chrome-developer-tools/">Chrome Developer Tools.</a></li>
+    <li>With Batarang, you can examine the model of the app.</a></li>
 </section>
 
 
-
-
-
-<section class="slide no-md">
+<section class="slide">
     <h2>Google Trends</h2>
     <ul>
-    <li>Angular versus Backbone, Ember, etc.</li>
-    <li><a href="http://t.co/klpK4s80lW">http://t.co/klpK4s80lW</a></li>
+    <li>Angular versus Backbone, Ember, etc.</br>
+    <a href="http://t.co/klpK4s80lW">http://t.co/klpK4s80lW</a></li>
     </ul>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Angular versus jQuery</h2>
     <ul>
       <li><a href="http://bit.ly/1cAvBOJ">http://bit.ly/1cAvBOJ</a></li>
     </ul>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Angular Learning Curve</h2>
     <ul>
       <li><a href="http://nathanleclaire.com/blog/2014/01/04/5-smooth-angularjs-application-tips/">http://nathanleclaire.com/blog/2014/01/04/5-smooth-angularjs-application-tips/</a></li>
@@ -178,19 +200,20 @@
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Angular Phonecat</h2>
     <ul>
-	    <li> The official Angular tutorial app </li>
-      <li><a href="http://docs.angularjs.org/tutorial/"></a>http://docs.angularjs.org/tutorial/</li>
+      <li><a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a></li>
+      <li> The official Angular tutorial app.</li>
+      <li><a href="http://docs.angularjs.org/tutorial/">http://docs.angularjs.org/tutorial/</a></li>
     </ul>
 </section>
 
-
  
-<section class="slide no-md">
+<section class="slide">
+    <h2>A view from Angular Phonecat</h2>
 <div> 
-  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
 <!doctype html>
 <html lang="en" ng-app="phonecatApp">
 <head>
@@ -212,27 +235,28 @@
 
 </body>
 </html>
-
   </textarea>
 </div> 
+    <small>Source: <a href="https://github.com/angular/angular-phonecat/blob/step-2/app/index.html">github.com/angular/angular-phonecat/blob/step-2/app/index.html</a></small>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Scope is crucial to Angular</h2>
     <ul>
-      <li> Scope is structured like the roots of a tree</li>
-      <li>ng-app defines RootScope</li>
-      <li>Your controller and view define a new scope on the page</li>
-      <li>Even ng-repeat creates its own scope inside this.</li>
+      <li>Scope is structured like the roots of a tree.</li>
+      <li>ng-app defines RootScope.</li>
+      <li>Your view defines a new scope on the page.</li>
+      <li>Even ng-repeat creates its own nested scope.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
+    <h2>A controller from Angular Phonecat</h2>
 <div> 
-  <div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
-use strict';
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
+'use strict';
 	  
 var phonecatApp = angular.module('phonecatApp', []);
 
@@ -240,31 +264,42 @@ phonecatApp.controller('PhoneListCtrl',
   function($scope) {
 
 $scope.phones = [
-    {'name': 'Nexus S',
-       'snippet': 'Fast just got faster with Nexus S.'},
-         {'name': 'Motorola XOOM™ with Wi-Fi',
-            'snippet': 'The Next, Next Generation tablet.'},
-       {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
+  {'name': 'Nexus S',
+   'snippet': 'Fast just got faster with Nexus S.'},
+  {'name': 'Motorola XOOM™ with Wi-Fi',
+   'snippet': 'The Next, Next Generation tablet.'},
+  {'name': 'MOTOROLA XOOM™',
+   'snippet': 'The Next, Next Generation tablet.'}
   ];
 });
-  </div>
-   
+  </textarea>
 </div> 
+    <small>Source: <a href="https://github.com/angular/angular-phonecat/blob/step-2/app/js/controllers.js">github.com/angular/angular-phonecat/blob/step-2/app/js/controllers.js</a></small>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Angular loves JSON</h2>
     <ul>
-      <li> JSON: JavaScript object notation</li>
-      <li>Angular consumes JSON best as an array of objects</li>
+      <li>JSON: JavaScript Object Notation</li>
+      <li>Angular consumes JSON most easily as an array of objects.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
-<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+<section class="slide">
+    <h2>Filters</h2>
+    <ul>
+      <li>Handy, declarative feature.</li>
+      <li>Several filters built-in.</li>
+      <li>You can also write your own filters.</li>
+    </ul>
+</section>
+
+
+<section class="slide">
+    <h2>Phonecat View with a Filter</h2>
+<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
 <body ng-controller="PhoneListCtrl">
  <div class="container-fluid">
   <div class="row-fluid">
@@ -278,84 +313,72 @@ $scope.phones = [
       <p>{{phone.snippet}}</p>
       </li>
     </ul>
-    </div>
-    </div>
+   </div>
   </div>
+ </div>
 </body>
 </textarea>
-   
+    <small>Source: <a href="https://github.com/angular/angular-phonecat/blob/step-3/app/index.html">github.com/angular/angular-phonecat/blob/step-3/app/index.html</a></small>
 </section>
 
 
-<section class="slide no-md">
-    <h2>Filters</h2>
-    <ul>
-      <li>Handy, declarative feature</li>
-      <li>Several filters built-in</li>
-      <li>You can also write your own filters</li>
-    </ul>
-</section>
-
-
-<section class="slide no-md">
+<section class="slide">
     <h2>Angular-grunt-coffeescript</h2>
     <ul>
       <li><a href="https://github.com/roytruelove/angular-grunt-coffeescript">https://github.com/roytruelove/angular-grunt-coffeescript</a></li>
-      <li>Excellent starting point for an Angular app</li>
-      <li>Well-structured: directory per feature</li>
-      <li>Demos use of directives, filters, services</li>
+      <li>Excellent starting point for an Angular app.</li>
+      <li>Well-structured: directory per feature.</li>
+      <li>Demonstrates uses of directives, filters, services.</li>
       <li>Uses CoffeeScript!</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Polyglot Angular</h2>
-      <li>I highly recommend you learn CoffeeScript</li>
-      <li>Well-suited to Angular</li>
-      <li>Only 4 years old</li>
-      <li>Already language #13 on Github for new repostory creation
-      (Source: Adam Bard, 30th Aug 2013.)</li>
-      <li><a href="http://www.hanselman.com/blog/JavaScriptIsAssemblyLanguageForTheWebSematicMarkupIsDeadCleanVsMachinecodedHTML.aspx"></a>JavaScript is Assembly Language for the Web...</li>
-    </ul>
+    <ul>
+      <li>I highly recommend you learn CoffeeScript.</li>
+      <li>Well-suited to Angular.</li>
+      <li>Only 4 years old.</li>
+      <li>Language #13 on Github, for new repository creation.*</li>
+      <li><a href="http://www.hanselman.com/blog/JavaScriptIsAssemblyLanguageForTheWebSematicMarkupIsDeadCleanVsMachinecodedHTML.aspx">JavaScript is Assembly Language for the Web</a>.</li>
+        </ul><small><a href="http://adambard.com/blog/top-github-languages-for-2013-so-far/">(* Source: Adam Bard, 30th Aug 2013.)</a></small>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>What you need to know about CoffeeScript</h2>
     <ul>
-      <li>Like Python, whitespace is significant</li>
-      <li>Whitespace defines blocks (for functions and objects)</li>
-      <li>The arrow -> is used to define a function  </li>
-      <li>Easy to pick up Coffee  </li>
+      <li>Like Python, whitespace is significant.</li>
+      <li>Whitespace defines blocks (for functions and objects).</li>
+      <li>The arrow -> is used to define a function.</li>
+      <li>Coffee is close to JavaScript. It's easy to pick up.</li>
       <li><a href="http://coffeescript.org">coffeescript.org</a></li>
       <li>Coffee compiles instantly to readable JavaScript.</li>
     </ul>
 </section>
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Sample Coffee object</h2>
 <div>
-  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="true">
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
 math =
   root:   Math.sqrt
-  square: square
-  cube:   (x) -> x * square x
+  cube:   (x) -> x * x * x
   </textarea>
 </div> 
 </section>
   
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Equivalent JavaScript</h2>
  <div> 
-  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
 math = {
   root: Math.sqrt,
-  square: square,
   cube: function(x) {
-    return x * square(x);
+    return x * x * x;
   }
 };
   </textarea>
@@ -363,47 +386,63 @@ math = {
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
+    <h2>Node is needed for its toolchain</h2>
+    <ul>
+      <li>Goal: install npm, the package manager for Node.</li>
+      <li>npm installs Coffee and Karma, plus other tools.</li>
+      <li>Start by installing <a href="https://github.com/creationix/nvm">nvm (Node Version Manager)</a>:</li>
+      <small><code>curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></small>
+      <li>Then install Node and npm:</li>
+      <small><code>nvm install 0.10.24</code></small>
+      <li><a href="https://www.digitalocean.com/community/articles/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps">More detailed instructions.</a></li>
+    </ul>
+</section>
+
+
+<section class="slide">
     <h2>Convert CoffeeScript snippets to JavaScript</h2>
     <ul>
-      <li>First install js2coffee:</li>
-      <li><code>npm install -g js2coffee</code></li>
+      <li>Install CoffeeScript:</li>
+      <small><code>npm install -g coffee-script</code></small>
+      <li>Install js2coffee:</li>
+      <small><code>npm install -g js2coffee</code></small>
       <li>Then convert JavaScript:</li>
-      <li><code>js2coffee input.js > output.coffee </code></li>
+      <small><code>js2coffee input.js > output.coffee </code></small>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Let's talk about DI</h2>
     <ul>
-    <li>DI: dependency injection</li>
-    <li>Familiar to the Java world: e.g. Spring, Guice</li>
-    <li>DI is also used in .NET</li>
-    <li>DI is essential in Angular apps</li>
+    <li>DI: Dependency Injection.</li>
+    <li>Familiar to the Java world: e.g. Spring, Guice.</li>
+    <li>DI is also used in .NET.</li>
+    <li>DI is essential in Angular apps.</li>
+    <li>e.g. DI provides the modules needed by each controller.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>angular.module</h2>
     <ul>
-    <li>The name of the app ('app')</li>
-    <li>And the modules it depends on</li>
-    </ul>
-<div> 
-	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+    <li>The name of the app ('app').</li>
+    <li>And the modules it depends on:</li>
+  </ul>
+  <div>
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
 m = angular.module('app', mods)
-  </div>
-   
-</div> 
+  </textarea>
+  </div> 
 </section>
 
 
-<section class="slide no-md">
-    <h2>The modules of the app</h2>
+<section class="slide">
+    <h2>The app's modules</h2>
 <div> 
-	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
 mods = [
   'common.directives.glowGreenOnMouseoverDirective'
   'common.directives.uiTooltipDirective'
@@ -420,30 +459,31 @@ mods = [
   'searchView.mattizerFilter'
   'searchView.searchViewCtrl'
 ]
-  </div>
-   
+  </textarea>
 </div> 
+  <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/app.coffee">github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/app.coffee</a></small>
 </section>
 
 
-<section class="slide no-md">
-    <h2>The routes (to the pages) of the app</h2>
+<!--div id="code" name="code" class="code" mode="coffeescript" style="display: none;"--> 
+<section class="slide">
+    <h2>Routes to the app's pages</h2>
 <div> 
-	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
-routesConfigFn = ($routeProvider)->
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
+routesConfigFn = ($routeProvider) ->
   $routeProvider.when('/search',
     {templateUrl: 'searchView/searchView.html'})
   $routeProvider.when('/details/:id',
     {templateUrl: 'detailsView/detailsView.html'})
-
   $routeProvider.otherwise({redirectTo: '/search'})
+  </textarea>
 </div>
-   
-</div> 
+  <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/app.coffee">github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/app.coffee</a></small>
 </section>
 
-<section class="slide no-md">
-    <h2>How routes are configured</h2>
+
+<section class="slide">
+    <h2>Configuring the routes</h2>
 <div> 
 	<div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
 m = angular.module('app', mods)
@@ -454,49 +494,66 @@ m.config ['$routeProvider', routesConfigFn]
 </section>
 
 
-<section class="slide no-md">
-<h2>The run method</h2>
-<ul>
-	<li>The run method is like the main() in C or Python</li> 
-	<li>executed first, once the Angular app has bootstrapped</li> 
-	<li>Good place to put an initial request to the server, say;
-            or detect the user's login status (wth ngCookies)</li> 
-</ul>
-</section>
-
-
-<section class="slide no-md">
-<h2>The run method</h2>
-<div> 
-	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
-m.run (['common.services.env', (env)->
-  # Allows the environment service to run whatever app run block it wants.
-  if env.appRun?
-    env.appRun()
-])
-  </div>
-</div> 
-</section>
-
-
-<section class="slide no-md">
-    <h2>The Power of Directives</h2>
+<section class="slide">
+    <h2>How Angular works</h2>
     <ul>
-    <li>Key selling-point of AngularJS</li>
-    <li>Angular comes with a great host of directives built-in</li>
-    <li>See: <a href="http://docs.angularjs.org/api">http://docs.angularjs.org/api</a></li>
-    <li>Using a directive is declarative programming</li>
-    <li>And you can build your own directives (advanced topic)</li>
+      <li>When Angular bootstraps (after <code>angular.js</code> loads)</br>
+          ...Angular 'compiles' the directives on the page <br/>
+          ...into HTML and JavaScript.</li>
+      <li>Angular responds to routes (URLs in the browser)<br/>
+          ...by loading the appropriate view (HTML file)<br/>
+          ...and passing control to its controller.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
+<h2>The run method</h2>
+<ul>
+	<li>The run method is like the main() in C or Python.</li> 
+	<li>Executed first, once the Angular app has bootstrapped.</li> 
+	<li>Good place to make an initial request to the server, say;
+            or detect the user's login status (wth ngCookies).</li> 
+</ul>
+</section>
+
+
+<section class="slide">
+<h2>The run block</h2>
+<div> 
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
+m.run (['common.services.env', (env) ->
+# Allows the environment service to run
+# whatever app run block it wants.
+  if env.appRun?
+    env.appRun()
+])
+  </textarea>
+</div> 
+  <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/app.coffee">github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/app.coffee</a></small>
+</section>
+
+
+<section class="slide">
+    <h2>The Power of Directives</h2>
+    <ul>
+    <li>Key selling-point of AngularJS.</li>
+    <li>Angular comes with a great host of directives built-in.</li>
+    <li>See: <a href="http://docs.angularjs.org/api">http://docs.angularjs.org/api</a>.</li>
+    <li>Using a directive is declarative programming.</li>
+    <li>And you can build your own directives (advanced topic).</li>
+    </ul>
+</section>
+
+
+<section class="slide">
 <h2>A simple directive, built with jQuery</h2>
 <div> 
-	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
-name = 'common.directives.glowGreenOnMouseoverDirective'
+  <ul><li>Note: headlessCamelCase for directive name.</li></ul>
 
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
+    
+name = 'common.directives.glowGreenOnMouseoverDirective'
 angular.module(name,[]).directive('glowGreenOnMouseover', [
  '$log'
  ($log) ->
@@ -507,15 +564,17 @@ angular.module(name,[]).directive('glowGreenOnMouseover', [
         element.bind 'mouseleave', () ->
           $(element).removeClass('greenGlow')
 ])
-  </div>
+  </textarea>
 </div> 
+  <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/common/directives/glowGreenOnMouseoverDirective.coffee">github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/common/directives/glowGreenOnMouseoverDirective.coffee</a></small>
 </section>
 
 
-<section class="slide no-md">
-<h2>Using the directive in a view</h2>
+<section class="slide">
+<h2>The directive in a view</h2>
+  <ul><li>Note: spinal-case for using a directive.</li></ul>
 <div> 
-  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
 
 <div class="span6">
   <input type="text" ng-model="search" placeholder="Filter by name..."></input>
@@ -526,30 +585,27 @@ angular.module(name,[]).directive('glowGreenOnMouseover', [
   </ul>
 </div>
   </textarea>
-  
 </div> 
+  <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/searchView/searchView.html">github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/searchView/searchView.html</a></small>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Services for Code Organisation</h2>
     <ul>
-      <li>AngularJS services are local (in the browser)</li>
-      <li>Modules for your code</li>
-      <li>Reduce code duplication</li>
+      <li>AngularJS services are local (in the browser).</li>
+      <li>Modules for your code.</li>
+      <li>Reduce code duplication.</li>
       <li>Without services, you'll repeat code in your controllers!</li>
-      <li>DRY: Don't Repeat Yourself</li>
+      <li>DRY: Don't Repeat Yourself.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
 <h2>A service to retrieve the data for the app</h2>
 <div> 
-	<div id="code" name="code" class="code" mode="coffeescript" style="display: none;"> 
-### Example of a service shared across views.
-Wrapper around the data layer for the app. 
-###
+  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="false">
 name = 'common.services.dataSvc'
 class DataSvc
   constructor: (@$log, @$http, @env) ->
@@ -568,15 +624,16 @@ angular.module(name, []).factory(name,
 ($log, $http, env) ->
         new DataSvc($log, $http, env)
 ])
-  </div>
+  </textarea>
 </div> 
+    <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/common/services/dataSvc.coffee">https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/common/services/dataSvc.coffee</a></small>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
 <h2>Using the service in a controller</h2>
 <div> 
-  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="true">
+  <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="false">
 name = 'searchView.searchViewCtrl'
 
 angular.module(name, []).controller(name, [
@@ -590,109 +647,107 @@ angular.module(name, []).controller(name, [
     data.getPeople().then (resp)->
       $scope.people = resp.data
   </textarea>
-  
 </div> 
+    <small>Source: <a href="https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/searchView/searchViewCtrl.coffee">https://github.com/roytruelove/angular-grunt-coffeescript/blob/develop/src/main/app/searchView/searchViewCtrl.coffee</a></small>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Online resources</h2>
     <ul>
-    <li><a href="http://ng-newsletter.com/">ng-newsletter for articles</a></li>
-    <li><a href="http://egghead.io/">Egghead.io for videos</a></li>
+    <li><a href="http://ng-newsletter.com/">ng-newsletter</a> for articles.</li>
+    <li><a href="http://egghead.io/">Egghead.io</a> for videos.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Python on the server</h2>
     <ul>
-    <li>Use Python to create RESTful services</li>
-    <li><a href="http://www.django-rest-framework.org/">Django REST Framework</li>
-	    <li><a href="http://django-tastypie.readthedocs.org/en/latest/">Tastypie</a></li>
-    <li>If you must mix Django templates with Angular (bad idea)</li>
-    <li>...use <a href="https://github.com/aljosa/django-verbatim">Verbatim</a></li>
-    <li>(Verbatim is in Django 1.5 by default.)</li>
+    <li>Use Python to create RESTful services:</li>
+    <small><a href="http://www.django-rest-framework.org/">Django REST Framework</a> or</small><br/>
+    <small><a href="http://django-tastypie.readthedocs.org/en/latest/">Tastypie</a>.</small>
+    <li>If you must mix Django templates with Angular</li>
+    <small>...use <a href="https://github.com/aljosa/django-verbatim">Verbatim</a>.</small>
+    <li>Verbatim is in Django 1.5 by default.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Beyond CoffeeScript</h2>
     <ul>
-    <li><a href="http://clojurescript.org">ClojureScript</a></li>
-    <li><a href="https://github.com/zcaudate/purnam">Purnam library</a></li>
-    <li><a href="https://github.com/zcaudate/purnam-angular-example">Purnam sample Angular app</a></li>
+    <li><a href="http://clojurescript.org">ClojureScript</a>.</li>
+    <li><a href="https://github.com/zcaudate/purnam">Purnam library</a>.</li>
+    <li><a href="https://github.com/zcaudate/purnam-angular-example">Sample Angular app with Purnam</a>.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Add-on packages</h2>
     <ul>
-<li> Lo-Dash for map, filter, reduce etc.</li>
-<li> (powerful functional features) </li>
-<li> Restangular for server comm.s </li>
-<li>(instead of ng-Resource or $http)</li>
-<li> Angular ui-router for multi-view pages</li>
-<li> <a href="http://angular-ui.github.io/bootstrap/">AngularUI Bootstrap</li>
+      <li> <a href="http://lodash.com/">Lo-Dash</a> for map, filter, reduce etc.</li>
+<small> (powerful functions to process data structures).</small>
+<li> <a href="https://github.com/mgonto/restangular">Restangular</a> for server comms.</li>
+<small>(instead of ngResource or $http).</small>
+<li> Angular <a href="https://github.com/angular-ui/ui-router">ui-router</a> for multi-view pages.</li>
+<li>Angular <a href="http://angular-ui.github.io/bootstrap/">UI Bootstrap</a> to build a user-interface.</li>
     </ul>
 </section>
 
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Embrace the JavaScript ecosystem</h2>
     <ul>
-<li>build system - grunt usually</li>
-<li>package management - bower (usually)</li>
-<li>small/unit tests: Jasmine</li>
-<li>system/integration/large tests: Karma</li>
+      <li>Build system - <a href="http://gruntjs.com/">Grunt</a>.</li>
+      <li>Package management - <a href="https://github.com/bower/bower">Bower</a> (usually).</li>
+      <li>Small/unit tests - <a href="http://pivotal.github.io/jasmine/">Jasmine</a>.</li>
+      <li>System/integration/large tests - <a href="http://karma-runner.github.io/">Karma</a>.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2> "God is in the structure"</h2>
   <ul>
-	  <li>Use a starter project</li>
-	  <li> angular-grunt-coffeescript if you're using Coffee </li>
-	  <li> ng-boilerplate for JavaScript </li>
-
-	    <li> Subdirectory per feature </li>
-	    <li> Use services for code modules (intermediate) </li>
-	    <li>Write directives (advanced)</li>
+	  <li>Use a starter project:</li>
+          <li>...<a href="https://github.com/roytruelove/angular-grunt-coffeescript/">angular-grunt-coffeescript</a> if you're using Coffee.</li>
+          <li>...<a href="https://github.com/ngbp/ngbp">ng-boilerplate</a> for JavaScript.</li>
+	    <li>Subdirectory per feature.</li>
+	    <li>Use services for code modules (intermediate).</li>
+	    <li>Write directives (advanced).</li>
     </ul>
 </section>
 
 
-
-<section class="slide no-md">
-    <h2>Learn Chrome Developer Tools</h2>
+<section class="slide">
+    <h2>Learn about Chrome Developer Tools</h2>
     <ul>
     <li> <a href="http://discover-devtools.codeschool.com/">Free, 7-part, interactive tutorial on CodeSchool</a></li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Number One Tip for AngularJS development</h2>
-    <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Angular Batarang</a></li>
+    <li>The Chrome add-on: <a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">AngularJS Batarang</a></li>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Where to go from here</h2>
     <ul>
-     <li> Work through the 13-part official Angular tutorial</li>
-     <li><a href="http://docs.angularjs.org/tutorial/"></a>http://docs.angularjs.org/tutorial/</li>
-     <li>Learn CoffeeScript e.g. on <a href="http://coffeescript.org">coffeescript.org</a></li>
-      <li>Study <a href="https://github.com/roytruelove/angular-grunt-coffeescript">angular-grunt-coffeescript</a></li>
+     <li> Work through the 13-part, official Angular tutorial:</li>
+     <small><a href="http://docs.angularjs.org/tutorial/">http://docs.angularjs.org/tutorial/</a></small>
+     <li>Learn CoffeeScript e.g. on <a href="http://coffeescript.org">coffeescript.org</a>.</li>
+      <li>Read the code of <a href="https://github.com/roytruelove/angular-grunt-coffeescript">angular-grunt-coffeescript</a>.</li>
     </ul>
 </section>
 
 
-<section class="slide no-md">
+<section class="slide">
     <h2>Credits</h2>
     <ul>
     <li>DOM tree image by <a href="http://dbaron.org/">David Baron</a></li>
@@ -700,48 +755,12 @@ angular.module(name, []).controller(name, [
 </section>
 
 
-
-<section class="slide no-md">
+<section class="slide">
    <h2>Questions</h2>
 
-   <h2>@kevin_noonan</h2>
+   <h2><a href="http://twitter.com/kevin_noonan">@kevin_noonan</a></h2>
 
 </section>
-
-
-<section class="slide no-md">
-    <h2></h2>
-    <ul>
-    <li></li>
-    <li></li>
-    <li><a href=""></a></li>
-    </ul>
-</section>
-
-<section class="slide no-md">
-<div> 
-  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
-
-  var greeter = function(name) {
-    return "Why hello there " + name;
-  }
-  console.log(greeter("Joe"));
-  </textarea>
-  
-</div> 
-</section>
-
-<section class="slide no-md">
-<div> 
-  <div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
-    var obj = { text : "Hello all!"};
-    console.log("HI THERE");
-  </div>
-   
-</div> 
-</section>
-
-
 
     <!-- End slides. -->
 
@@ -798,11 +817,11 @@ angular.module(name, []).controller(name, [
 <script src="extensions/pointer/deck.pointer.js"></script>
 
 <!-- Table of Contents -->
-<script src="extensions/toc/deck.toc.js"></script>
+<!--script src="extensions/toc/deck.toc.js"></script-->
 
 <!-- Markdown -->
-<script src="extensions/markdown/Markdown.Converter.js"></script>
-<script src="extensions/markdown/deck.markdown.js"></script>
+<!--script src="extensions/markdown/Markdown.Converter.js"></script-->
+<!--script src="extensions/markdown/deck.markdown.js"></script-->
 
 
 <!-- Base codemiror code -->
