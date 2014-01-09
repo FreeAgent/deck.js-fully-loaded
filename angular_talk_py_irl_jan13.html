@@ -56,13 +56,34 @@
     <h2>8th Jan 2014, Dublin</h2>
 </section>
 
+
 <section class="slide no-md">
-    <h2></h2>
+    <h2>Very simple AngularJS app</h2>
+<div> 
+  <textarea id="code1" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+ <meta charset="utf-8">
+   <title>My HTML File</title>
+     <link rel="stylesheet" href="css/app.css">
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <script src="lib/angular/angular.js"></script>
+</head>
+  <body>
+    <p>Hello {{ "Python Ireland" }} !</p>
+</body>
+</html>
+  </textarea>
+</div> 
+</section>
+
+
+<section class="slide no-md">
+    <h2>ng-app bootstraps your Angular app</h2>
     <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li><li>
+	    <li> ng-app defines the area of the page where Angular is in control</li>
+      <li>(Without ng-app, you don't have an Angular app.)</li>
     </ul>
 </section>
 
@@ -70,10 +91,10 @@
 <section class="slide no-md">
     <h2>High-Level overview of AngularJS</h2>
     <ul>
-    <li>JavaScrpt library, for building a rich web client</li>
+    <li>JavaScript library, for building a rich web client</li>
     <li>A framework not unlike Django, but in the browser</li>
     <li>A level of abstraction above jQuery</li>
-    <li>...and other DOM-manipulation and events libraries.<li>
+    <li>...and other DOM-manipulation and events libraries.</li>
     </ul>
 </section>
 
@@ -83,12 +104,9 @@
     <li>MVC, all in the browser</li>
     <li>Model: JavaScript data-structures</li>
     <li>View: a section of a web-page</li>
-    <li>Controller: JavaScript code to handle that view<li>
-    <li><li>
+    <li>Controller: JavaScript code to handle that view</li>
     </ul>
 </section>
-
-
 
 <section class="slide no-md">
     <h2>A Potted History of Native Web Development</h2>
@@ -135,15 +153,6 @@
 
 
 
-<section class="slide no-md">
-    <h2></h2>
-    <ul>
-    <li></li>
-    <li></li>
-    <li><a href=""></a></li>
-    </ul>
-</section>
-
 
 
 <section class="slide no-md">
@@ -177,36 +186,6 @@
     </ul>
 </section>
 
-
-
-<section class="slide no-md">
-<div> 
-  <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
-<!doctype html>
-<html lang="en" ng-app>
-<head>
- <meta charset="utf-8">
-   <title>My HTML File</title>
-     <link rel="stylesheet" href="css/app.css">
-     <link rel="stylesheet" href="css/bootstrap.css">
-     <script src="lib/angular/angular.js"></script>
-</head>
-  <body>
-    <p>Hello {{ "Python Ireland" }} !</p>
-</body>
-</html>
-  </textarea>
-</div> 
-</section>
-
-
-<section class="slide no-md">
-    <h2>ng-app bootstraps your Angular app</h2>
-    <ul>
-	    <li> ng-app defines the area of the page where Angular is in control</li>
-      <li>(Without ng-app, you don't have an Angular app.)</li>
-    </ul>
-</section>
 
  
 <section class="slide no-md">
@@ -350,13 +329,14 @@ $scope.phones = [
       <li>The arrow -> is used to define a function  </li>
       <li>Easy to pick up Coffee  </li>
       <li><a href="http://coffeescript.org">coffeescript.org</a></li>
+      <li>Coffee compiles instantly to readable JavaScript.</li>
     </ul>
 </section>
 
 <section class="slide no-md">
+    <h2>Sample Coffee object</h2>
 <div>
   <textarea id="code" name="code" class="code" mode="coffeescript" style="display: none;" runnable="true">
-# Objects:
 math =
   root:   Math.sqrt
   square: square
@@ -368,6 +348,7 @@ math =
 
 
 <section class="slide no-md">
+    <h2>Equivalent JavaScript</h2>
  <div> 
   <textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">
 math = {
@@ -462,7 +443,7 @@ routesConfigFn = ($routeProvider)->
 </section>
 
 <section class="slide no-md">
-    <h2>How the routes are configured</h2>
+    <h2>How routes are configured</h2>
 <div> 
 	<div id="code" name="code" class="code" mode="javascript" style="display: none;"> 
 m = angular.module('app', mods)
@@ -553,11 +534,11 @@ angular.module(name,[]).directive('glowGreenOnMouseover', [
 <section class="slide no-md">
     <h2>Services for Code Organisation</h2>
     <ul>
-      <li>AngularJS services are local (in the browser)<li>
-      <li>Modules for your code<li>
-      <li>Reduce code duplication<li>
-      <li>Without services, you'll repeat code in your controllers!<li>
-      <li>DRY: Don't Repeat Yourself<li>
+      <li>AngularJS services are local (in the browser)</li>
+      <li>Modules for your code</li>
+      <li>Reduce code duplication</li>
+      <li>Without services, you'll repeat code in your controllers!</li>
+      <li>DRY: Don't Repeat Yourself</li>
     </ul>
 </section>
 
@@ -614,17 +595,6 @@ angular.module(name, []).controller(name, [
 </section>
 
 
-
-<section class="slide no-md">
-    <h2>Where to go from here</h2>
-    <ul>
-     <li> Work through the 13-part official Angular tutorial</li>
-     <li><a href="http://docs.angularjs.org/tutorial/"></a>http://docs.angularjs.org/tutorial/</li>
-     <li>Learn CoffeeScript e.g. on <a href="http://coffeescript.org">coffeescript.org</a></li>
-      <li>Study <a href="https://github.com/roytruelove/angular-grunt-coffeescript">angular-grunt-coffeescript</a></li>
-    </ul>
-</section>
-
 <section class="slide no-md">
     <h2>Online resources</h2>
     <ul>
@@ -639,9 +609,9 @@ angular.module(name, []).controller(name, [
     <ul>
     <li>Use Python to create RESTful services</li>
     <li><a href="http://www.django-rest-framework.org/">Django REST Framework</li>
-    <li><a href="http://django-tastypie.readthedocs.org/en/latest/">Tastypie</li>
+	    <li><a href="http://django-tastypie.readthedocs.org/en/latest/">Tastypie</a></li>
     <li>If you must mix Django templates with Angular (bad idea)</li>
-    <li>...use <a href="https://github.com/aljosa/django-verbatim">Verbatim</li>
+    <li>...use <a href="https://github.com/aljosa/django-verbatim">Verbatim</a></li>
     <li>(Verbatim is in Django 1.5 by default.)</li>
     </ul>
 </section>
@@ -653,7 +623,6 @@ angular.module(name, []).controller(name, [
     <li><a href="http://clojurescript.org">ClojureScript</a></li>
     <li><a href="https://github.com/zcaudate/purnam">Purnam library</a></li>
     <li><a href="https://github.com/zcaudate/purnam-angular-example">Purnam sample Angular app</a></li>
-    <li><a href=""></a></li>
     </ul>
 </section>
 
@@ -662,7 +631,7 @@ angular.module(name, []).controller(name, [
     <h2>Add-on packages</h2>
     <ul>
 <li> Lo-Dash for map, filter, reduce etc.</li>
-<li> (powerful functional features) <li>
+<li> (powerful functional features) </li>
 <li> Restangular for server comm.s </li>
 <li>(instead of ng-Resource or $http)</li>
 <li> Angular ui-router for multi-view pages</li>
@@ -681,9 +650,6 @@ angular.module(name, []).controller(name, [
 <li>system/integration/large tests: Karma</li>
     </ul>
 </section>
-
-Source control (of course)
-
 
 
 <section class="slide no-md">
@@ -716,6 +682,17 @@ Source control (of course)
 
 
 <section class="slide no-md">
+    <h2>Where to go from here</h2>
+    <ul>
+     <li> Work through the 13-part official Angular tutorial</li>
+     <li><a href="http://docs.angularjs.org/tutorial/"></a>http://docs.angularjs.org/tutorial/</li>
+     <li>Learn CoffeeScript e.g. on <a href="http://coffeescript.org">coffeescript.org</a></li>
+      <li>Study <a href="https://github.com/roytruelove/angular-grunt-coffeescript">angular-grunt-coffeescript</a></li>
+    </ul>
+</section>
+
+
+<section class="slide no-md">
     <h2>Credits</h2>
     <ul>
     <li>DOM tree image by <a href="http://dbaron.org/">David Baron</a></li>
@@ -732,7 +709,14 @@ Source control (of course)
 </section>
 
 
-
+<section class="slide no-md">
+    <h2></h2>
+    <ul>
+    <li></li>
+    <li></li>
+    <li><a href=""></a></li>
+    </ul>
+</section>
 
 <section class="slide no-md">
 <div> 
@@ -757,9 +741,6 @@ Source control (of course)
 </div> 
 </section>
 
-<section class="slide no-md">
-
-</section>
 
 
     <!-- End slides. -->
